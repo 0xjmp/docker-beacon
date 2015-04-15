@@ -1,0 +1,3 @@
+web: bundle exec rails s thin
+memcached: memcached
+log: tail -f log/development.log
