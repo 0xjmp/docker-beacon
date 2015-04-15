@@ -59,5 +59,6 @@ Rails.application.routes.draw do
     match '/logout', to: 'sessions#destroy', via: [:get, :post]
 
     resources :users, only: [:show, :update]
+    resources :zones, only: [:create, :update, :destroy]
   end
 end

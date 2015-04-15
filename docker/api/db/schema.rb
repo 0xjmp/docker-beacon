@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415180520) do
+ActiveRecord::Schema.define(version: 20150415212312) do
 
   create_table "identities", force: :cascade do |t|
     t.string   "uid",        null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20150415180520) do
     t.boolean  "visible",    default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.string   "name",                       null: false
+    t.integer  "radius",     default: 100,   null: false
+    t.float    "latitude",                   null: false
+    t.float    "longitude",                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.boolean  "visible",    default: false, null: false
   end
 
 end

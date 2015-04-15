@@ -18,7 +18,7 @@ describe User do
   end
 
   it 'should create from omniauth' do
-    auth = {uid: '9874', provider: 'default'}
+    auth = {uid: '9874', provider: 'developer'}
     user = User.find_or_create_from_omniauth(auth)
     expect(user).to_not be_nil
   end

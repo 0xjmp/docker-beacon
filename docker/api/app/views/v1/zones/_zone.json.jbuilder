@@ -1,0 +1,1 @@
+json.(zone, :id, :name, :radius, :latitude, :longitude, :visible, :created_at, :updated_at, :user_id)
