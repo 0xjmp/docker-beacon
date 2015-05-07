@@ -1,0 +1,1 @@
+json.(identity, :provider, :user_id, :url)

@@ -15,6 +15,7 @@ describe V1::SessionsController do
     it '#create' do
       get :create, provider: 'developer', format: :json
       expect(response).to have_http_status :success
+      expect(assigns(:user).id).to eq user.id
     end
 
     it '#destroy' do
@@ -31,6 +32,8 @@ describe V1::SessionsController do
     it '#create' do
       get :create, provider: 'developer', format: :json
       expect(response).to have_http_status :success
+      expect(assigns(:user)).to_not be_nil
+      expect(assigns(:user).id).to_not eq user.id
     end
 
     it '#destroy' do

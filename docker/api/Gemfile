@@ -7,6 +7,11 @@ gem 'jbuilder'
 gem 'thin'
 gem 'responders'
 gem 'omniauth'
+gem 'omniauth-tumblr'
+gem 'omniauth-instagram'
+gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'better_errors'

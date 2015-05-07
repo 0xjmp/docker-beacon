@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include IdentitiesHelper
+
   has_many :identities, class_name: 'Identity', dependent: :destroy
   has_many :zones, dependent: :destroy
 
@@ -7,7 +9,9 @@ class User < ActiveRecord::Base
     identity = Identity.find_by(params)
     unless identity.present?
       params['user_id'] = create.id
-      identity = Identity.create(params)
+      identity = Identity.new(params)
+      identity.url = identity_url(auth)
+      identity.save
     end
     identity.user
   end
